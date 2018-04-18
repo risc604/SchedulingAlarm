@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity
 
     public void onClickedOnOff(View view)
     {
+        Log.w(TAG, "onClickedOnOff(), ");
         if(btnStatus)
         {
             btnOnOff.setText("STart Alarm");
