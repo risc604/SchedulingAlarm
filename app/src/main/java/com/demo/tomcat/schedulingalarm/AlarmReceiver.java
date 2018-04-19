@@ -2,18 +2,17 @@ package com.demo.tomcat.schedulingalarm;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
-import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.support.v4.content.WakefulBroadcastReceiver;
 import android.util.Log;
 
 import java.util.Calendar;
 
-import static android.support.v4.content.WakefulBroadcastReceiver.startWakefulService;
 
-public class AlarmReceiver extends BroadcastReceiver
+public class AlarmReceiver extends WakefulBroadcastReceiver
 {
     private static final String TAG = AlarmReceiver.class.getSimpleName();
 
@@ -28,7 +27,7 @@ public class AlarmReceiver extends BroadcastReceiver
         Log.w(TAG, "onReceive(), ");
         Intent service = new Intent(context, SchedulingService.class);
         startWakefulService(context, service);
-        throw new UnsupportedOperationException("Not yet implemented");
+        //throw new UnsupportedOperationException("Not yet implemented");
     }
 
 

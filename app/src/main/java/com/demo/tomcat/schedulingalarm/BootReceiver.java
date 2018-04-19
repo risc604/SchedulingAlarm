@@ -20,6 +20,6 @@ public class BootReceiver extends BroadcastReceiver
             alarm.setAlarm(context);
         }
         // an Intent broadcast.
-        throw new UnsupportedOperationException("Not yet implemented");
+        //throw new UnsupportedOperationException("Not yet implemented");
     }
 }
