@@ -42,8 +42,11 @@ public class AlarmReceiver extends WakefulBroadcastReceiver
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
 
-        alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
-                                1000 * 60 * 3, alarmIntent);
+        //alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
+        //                        1000 * 60 * 3, alarmIntent);
+        alarmMgr.setExact(AlarmManager.RTC_WAKEUP,
+                calendar.getTimeInMillis() + 30 * 1000,
+                alarmIntent);
         ComponentName receiver = new ComponentName(context, BootReceiver.class);
         PackageManager  pm = context.getPackageManager();
         pm.setComponentEnabledSetting(receiver,
